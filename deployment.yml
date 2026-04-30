@@ -10,7 +10,6 @@ metadata:
   name: nginx
   namespace: web
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -32,20 +31,20 @@ spec:
           value: "5432"
         resources:
           requests:
-            memory: "256Mi"
-            cpu: "250m"
+            memory: "256Mi" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4
+            cpu: "250m" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4
           limits:
-            memory: "512Mi"
-            cpu: "500m"
+            memory: "512Mi" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4 e colocar um pouco a mais 
+            cpu: "500m" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4 e colocar um pouco a mais 
         readinessProbe:
           httpGet:
-           path: /
+           path: /helfcheck
            port: 3000
-          initialDelaySeconds: 5
+          initialDelaySeconds: 30
           periodSeconds: 10
         livenessProbe:
           httpGet:
-            path: /
+            path: /helfcheck
             port: 3000
           initialDelaySeconds: 30
           periodSeconds: 10
