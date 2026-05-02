@@ -16,10 +16,10 @@ spec:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 50
+        averageUtilization: 70
   behavior:
     scaleDown:
-      stabilizationWindowSeconds: 3600  # aguarda 5 minutos antes de reduzir
+      stabilizationWindowSeconds: 60  # aguarda 5 minutos antes de reduzir
       policies:
       - type: Pods
         value: 1

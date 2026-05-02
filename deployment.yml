@@ -31,11 +31,11 @@ spec:
           value: "5432"
         resources:
           requests:
-            memory: "256Mi" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4
-            cpu: "250m" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4
+            memory: "250Mi" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4
+            cpu: "650m" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4
           limits:
-            memory: "512Mi" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4 e colocar um pouco a mais 
-            cpu: "500m" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4 e colocar um pouco a mais 
+            memory: "500Mi" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4 e colocar um pouco a mais 
+            cpu: "1200m" #No teste de de monolito multiplicar pelo valor de pods no caso 250 * 4 e colocar um pouco a mais 
         readinessProbe:
           httpGet:
            path: /helfcheck
