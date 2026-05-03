@@ -7,19 +7,19 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: app-pfc
   namespace: web
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: app-pfc
   template:
     metadata:
       labels:
-        app: nginx
+        app: app-pfc
     spec:
       containers:
-      - name: nginx
+      - name: app-pfc
         image: backend-pfc1 #colcar a minha imagem com a minha aplicaçao /// para o banco criar outro deploment, para o banco#
         imagePullPolicy: IfNotPresent
         ports:
